@@ -1,11 +1,5 @@
 package jp.co.metateam.library.model;
 
-import java.security.Timestamp;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -29,9 +23,7 @@ public class BookMstDto {
     @Pattern(regexp = "^[0-9]+$", message = "ISBNは半角数字で入力してください")
     @Size(min = 13, max = 13, message = "isbnは13文字で入力してください")
     private String isbn;
-    
+
     private Integer authorizationType = 1;
 
-
 }
-
