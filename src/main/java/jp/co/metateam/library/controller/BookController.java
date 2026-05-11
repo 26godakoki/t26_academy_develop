@@ -59,10 +59,23 @@ public class BookController {
     ){
     
 
- // エラーがある場合
+        // エラーがある場合
     if (result.hasErrors()) {
 
         return "book/add";}
+
+        
+         // ISBN重複チェック
+    if (bookMstService.existsIsbn(bookMstDto.getIsbn())) {
+
+        result.rejectValue(
+            "isbn",
+            "duplicate",
+            "このISBNは既に登録されています"
+        );
+
+        return "book/add";
+    }
 
         //保存処理(エラーがない状態)
     bookMstService.save(bookMstDto);

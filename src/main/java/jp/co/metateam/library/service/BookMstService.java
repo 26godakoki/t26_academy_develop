@@ -50,6 +50,9 @@ public class BookMstService {
     bookMstRepository.save(entity);
 
     }
+    public boolean existsIsbn(String isbn) {
+    return bookMstRepository.existsByIsbn(isbn);
+}
 }
 
 
