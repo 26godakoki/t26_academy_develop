@@ -43,7 +43,9 @@ public class BookMstService {
         return bookMstDtoList;
     }
     @Transactional
+    //Transactional 成功→DBに反映　途中でerror→全部取り消し
     public void save(BookMstDto bookMstDto){
+    //BookMstDtoからBookMstへの変換　型が異なるため変換している
     BookMst entity=new BookMst();
     entity.setIsbn(bookMstDto.getIsbn());
     entity.setTitle(bookMstDto.getTitle());

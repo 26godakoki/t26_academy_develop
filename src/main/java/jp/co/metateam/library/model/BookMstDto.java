@@ -25,7 +25,7 @@ public class BookMstDto {
     @Size(max = 255, message = "書籍名は255文字以下で入力してください")
     private String title;
 
-    @NotEmpty(message = "isbnは必須です")
+    @NotEmpty(message = "ISBNは必須です")
     @Pattern(
     regexp = "^$|^[0-9]{13}$",
     message = "ISBNは13桁の半角数字で入力してください"
